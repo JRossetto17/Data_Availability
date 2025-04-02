@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container
+      h1 Form Submission
+      form(action="/submit" method="POST")
+        .form-group
+          label(for="name") Name
+          input(type="text" id="name" name="name" required)
+
+        .form-group
+          label(for="created_date") Created Date
+          input(type="date" id="created_date" name="created_date" readonly)
+
+        .form-group
+          label(for="notes") Notes
+          textarea(id="notes" name="notes" required)
+
+        .form-group
+          label(for="color") Color
+          select(id="color" name="color" required)
+            option(value="red") Red
+            option(value="green") Green
+            option(value="white") White
+
+        .button-container
+          button(type="submit") Submit
+
+    script.
+      document.getElementById('created_date').value = new Date().toISOString().split('T')[0];
