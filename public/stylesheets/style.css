@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 90%;
   margin: 50px auto;
   padding: 20px;
   background-color: white;
@@ -89,6 +89,7 @@ th, td {
   padding: 8px 12px;
   text-align: left;
   border: 1px solid #ddd;
+  text-align: center;
 }
 
 th {
@@ -99,3 +100,59 @@ th {
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
+header {
+  background-color: #333;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center; 
+  align-items: center;      
+  gap: 10px;                
+}
+
+
+.btn-update, .btn-delete {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.btn-update {
+  background-color: #4CAF50;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+
+.btn-update:hover {
+  background-color: #45a049;
+}
+
+.btn-delete:hover {
+  background-color: #e53935;
+}
+
