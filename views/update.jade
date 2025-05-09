@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h1 Entry Update
+    form(action=`/update/${people.ID}` method="POST")
+      
+      .form-group
+        label(for="name") Name
+        input(type="text" id="name" name="name" value=people.Name required)
+
+      .form-group
+        label(for="age") Age
+        input(type="number" id="age" name="age" value=people.Age required)
+
+      .form-group
+        label(for="country") Country
+        input(type="text" id="country" name="country" value=people.Country required)
+
+      .button-container
+        button(type="submit") Submit

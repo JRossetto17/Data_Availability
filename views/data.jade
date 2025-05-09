@@ -1,20 +1,27 @@
 extends layout
 
 block content
-    h1 logger
-    .container
-        h1 Dynamic Table Example
-        table
-            thead
-            tr
-                th ID
-                th Name
-                th Age
-                th Country
-            tbody
-            each row, index in people
-                tr
-                td= row.id
-                td= row.name
-                td= row.age
-                td= row.country
+  .container
+    table
+      thead
+        tr
+          th ID
+          th Name
+          th Age
+          th Country
+          th Actions
+      tbody
+        each row in people
+          tr
+            td= row.ID
+            td= row.Name
+            td= row.Age
+            td= row.Country
+            td
+              .action-buttons
+                a(href='/update/' + row.ID, title="Update")
+                   button.btn-update
+                        i(class="fas fa-edit")
+                form(action='/remove/' + row.ID, method='POST', style='display:inline;')
+                    button.btn-delete(type='submit', title="Delete", onclick="return confirm('Are you sure you want to delete this entry?')")
+                        i(class="fas fa-trash-alt")
